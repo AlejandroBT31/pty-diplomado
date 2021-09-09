@@ -1,10 +1,10 @@
 type Function  {
   id: ID! @id
-  cinema: Cinema
+  cinema: Cinema @relation(link: INLINE)
   title: String!
   director: String!
   Clasification: String
-  startsAt: DateTime!
+  #startsAt: DateTime!
   endsAt: DateTime!
   type: TypeRoom
 }

@@ -1,6 +1,6 @@
 type Seats{
   id: ID! @id
-  row: int
-  number: int
-  room: Room
+  row: Int
+  number: Int
+  #room: Room @relation(link: INLINE)
 }

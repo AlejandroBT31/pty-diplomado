@@ -1,6 +1,6 @@
 type Room {
-  id: ID!
+  id: ID! @id
   name: String
-  seat: Seats
+  seat: Seats @relation(link: INLINE)
   maxOccupancy: Int
 }

@@ -1,10 +1,10 @@
 type Order{
   id: ID! @id
-  room: Room
-  cinema: Cinema
+  room: Room @relation(link: INLINE)
+  cinema: Cinema @relation(link: INLINE)
   price: Float!
-  startsAt: Function
-  seat: Seats
-  earnPoints: int 
-  user: User
+  startsAt: Function @relation(link: INLINE)
+  seat: Seats @relation(link: INLINE)
+  earnPoints: Int 
+  user: User @relation(link: INLINE)
 }
