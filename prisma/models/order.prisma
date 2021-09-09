@@ -1,5 +1,5 @@
 type Order{
-  id: ID!
+  id: ID! @id
   room: Room
   cinema: Cinema
   price: Float!

@@ -1,5 +1,5 @@
 type Function  {
-  id: ID!
+  id: ID! @id
   cinema: Cinema
   title: String!
   director: String!

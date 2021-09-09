@@ -10,7 +10,6 @@ datamodel:
   - ./models/seats.prisma
   - ./models/user.prisma
 
-
 generate:
   - generator: typescript-client
     output: ../src/generated/prisma-client

@@ -1,5 +1,5 @@
 type Seats{
-  id: ID!
+  id: ID! @id
   row: int
   number: int
   room: Room

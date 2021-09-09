@@ -1,5 +1,5 @@
 type Cinema {
-  id: ID!
+  id: ID! @id
   name: String
   location: String
   description: String
