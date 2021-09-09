@@ -1,0 +1,6 @@
+type Seats{
+  id: ID!
+  row: int
+  number: int
+  room: Room
+}

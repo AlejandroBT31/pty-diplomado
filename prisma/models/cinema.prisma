@@ -1,0 +1,6 @@
+type Cinema {
+  id: ID!
+  name: String
+  location: String
+  description: String
+}

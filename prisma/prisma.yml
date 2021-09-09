@@ -1,9 +1,14 @@
 endpoint: ${env:URL_BASE}/default/${env:ENVIROMENT}
 databaseType: document
 datamodel:
-  - ./models/user.prisma
-  - ./models/order.prisma
+  - ./models/cinema.prisma
+  - ./models/function.prisma
+  - ./models/movie.prisma
   - ./models/Node.prisma
+  - ./models/order.prisma
+  - ./models/room.prisma
+  - ./models/seats.prisma
+  - ./models/user.prisma
 
 
 generate:

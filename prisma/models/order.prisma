@@ -1,6 +1,10 @@
-type Order {
-    id: ID! @id
-    createdAt: DateTime! @createdAt
-    updatedAt: DateTime! @updatedAt
-    user: User @relation(link: INLINE)
+type Order{
+  id: ID!
+  room: Room
+  cinema: Cinema
+  price: Float!
+  startsAt: Function
+  seat: Seats
+  earnPoints: int 
+  user: User
 }

@@ -1,0 +1,18 @@
+type Function  {
+  id: ID!
+  cinema: Cinema
+  title: String!
+  director: String!
+  Clasification: String
+  startsAt: DateTime!
+  endsAt: DateTime!
+  type: TypeRoom
+}
+
+enum TypeRoom{
+    NORMAL
+    THIRDDIMENSION
+    QUARTERDIMENSION
+    IMAX
+    VIP
+}
