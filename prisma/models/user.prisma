@@ -6,6 +6,7 @@ type User {
   password: String
   name: String!
   type: TypeUser
+  token: String @unique
 }
 
 enum TypeUser{
