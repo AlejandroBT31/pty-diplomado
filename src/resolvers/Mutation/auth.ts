@@ -3,6 +3,7 @@ const { ApolloError, } = require("apollo-server");
 import * as jwt from 'jsonwebtoken'
 import * as bcrypt from 'bcryptjs'
 import { Context, getUserId } from '../../utils'
+import user from './user';
 var jwt = require('jsonwebtoken');
 
 export default {
@@ -32,7 +33,10 @@ export default {
         }),
         user,
 
-       jwt.verify(token, 'process.env.APP_SECRET', function(err, decoded){
+        const Authorization = ctx.request.get('Authorization')
+        const token = Authorization.replace("Bearer", ""),
+        try: {
+        jwt.verify(token, process.env.APP_SECRET, function(err, decoded){
           if(err){
             decoded.status(401).send({
               error: 'Invalid Token'
@@ -43,6 +47,10 @@ export default {
             })
           }
         }),
+      }, catch (error){
+        throw new Error(error);
+      }
+        
       };  
     } catch (error) {
       return error;
