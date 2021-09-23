@@ -1,19 +1,20 @@
-FROM node:14-alpine
+FROM node:10-slim
 
-RUN mkdir -p /home/app/node && chown node /home/app/node 
-
-WORKDIR /home/app/node
+RUN npm -g install prisma1 --unsafe-perm
 
 USER node
 
-COPY package.json ${WORKDIR}
+RUN mkdir -p /home/node/app
 
-RUN yarn install
+WORKDIR /home/node/app
 
-COPY . ${WORKDIR}
+COPY --chown=node package*.json ./
+RUN npm install
+
+COPY --chown=node . .
 
 ENV HOST=0.0.0.0 PORT=3000
 
 EXPOSE ${PORT}
 
-CMD ["yarn", "start"]
+CMD [ "npm", "run", "deploy" ]
